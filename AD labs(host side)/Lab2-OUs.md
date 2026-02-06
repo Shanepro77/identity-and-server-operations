@@ -39,7 +39,6 @@ Users are assigned to groups; permissions are not assigned directly to users.
 - Security groups visible in Groups OU
 `evidence/security-groups.png`
 - User “Member Of” tab showing group membership
-`evidence/user-group-membership.png`
 
 ---
 
