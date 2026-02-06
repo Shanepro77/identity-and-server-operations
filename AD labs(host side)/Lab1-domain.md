@@ -1,86 +1,72 @@
 # Lab 01 — Active Directory Domain Build
 
-## Overview
-This lab documents the **design, deployment, and validation** of an Active Directory domain using Windows Server 2022. The focus is on establishing a **stable, secure identity foundation** that is ready for client integration and operational use.
-
-The lab emphasises correctness, service dependency awareness, and verification of core domain functionality.
+## Purpose
+This lab demonstrates the **deployment and validation of a functional Active Directory domain** on Windows Server 2022. The focus is on confirming that core identity services are operational and ready for use, not on installation steps.
 
 ---
 
-## Objectives
-- Deploy a Windows Server 2022 Domain Controller
-- Create a DNS-backed Active Directory domain
-- Enforce a baseline domain-wide authentication policy
-- Validate core Active Directory services and domain health
-- Prepare the domain for client consumption
-
----
-
-## Environment
-- Windows Server 2022
-- Active Directory Domain Services (AD DS)
+## Scope
+- Domain Controller deployment
 - AD-integrated DNS
-- VMware virtualised environment
+- Domain-wide authentication policy
+- Core service validation
 
 ---
 
-## Domain Design
-- **Domain Name:** ShaneAd.local
-- **Single Domain Controller** (lab scope)
+## Domain Configuration
+- Domain Controller: Windows Server 2022
+- Domain: `ShaneAd.local`
 - DNS hosted on the Domain Controller
-- Static server identity suitable for directory services
+- Single-DC lab scope
 
-The domain is designed as a **central identity authority**, not a general-purpose server.
+![dom](ShaneAD-IP-Dns.png)
+- Domain visible in Active Directory Users and Computers
 
----
-
-## Core Configuration Summary
-The following components were configured as part of the domain build:
-
-- Active Directory Domain Services installation
-- Domain creation and promotion to Domain Controller
-- DNS role installation and AD integration
-- SYSVOL and NETLOGON share creation
-- Domain-wide password and authentication policy
-
-All configuration choices align with standard Active Directory best practices.
 
 ---
 
-## Security Baseline
-A **domain-wide password policy** was configured to enforce consistent authentication standards across all domain users.
+## Core Services Validation
+The following services confirm a healthy domain controller:
 
-Policy considerations included:
-- Minimum password length
-- Password complexity enforcement
-- Password history and rotation
+![Sysol](net-share-sysvol.png)
+- SYSVOL and NETLOGON shares present
+`evidence/sysvol-netlogon.png`
 
-The policy is applied at the **domain level**, ensuring uniform enforcement.
+- Active Directory–integrated DNS zones
+`evidence/ad-dns-zones.png`
 
 ---
 
-## Validation & Health Checks
-Domain functionality was validated using built-in tools and service checks, including:
+## Authentication Baseline
+A domain-wide password policy is enforced to ensure consistent authentication standards.
 
-- Verification of SYSVOL and NETLOGON shares
-- DNS zone presence and AD service records
-- Domain Controller diagnostic checks
-- Confirmation of domain readiness for client joins
+![SEC](Domain-Level-SEC.png)
+- Password and account policy configured at domain level
+`evidence/domain-password-policy.png`
 
-These checks confirm the domain is **operational and stable**, not just installed.
+---
+
+## Health Checks
+Built-in validation tools were used to confirm domain readiness.
+
+![SEC](Dcdiag-summary.png)
+- Domain Controller diagnostics (`dcdiag`) with no critical errors
+`evidence/dcdiag.png`
+
+---
+
+## Validation Summary
+- Domain services are running
+- DNS resolution supports Active Directory
+- Authentication policy is enforced
+- Domain is ready for client integration
 
 ---
 
 ## Outcome
-At the conclusion of this lab:
-- The domain is fully functional
-- Core identity services are operational
-- Authentication policies are enforced
-- The environment is ready for client systems and further identity design
-
-This lab establishes the **foundation upon which all subsequent identity and server operations depend**.
+The environment now provides a **stable identity foundation** upon which user management, policy enforcement, and client systems can be introduced.
 
 ---
 
 ## Design Insight
-A reliable identity system is built by validating service dependencies and enforcing baseline security **before** introducing clients or automation.
+Active Directory should be validated for service health and security **before** introducing clients or higher-level operations.
