@@ -40,6 +40,11 @@ Users are assigned to groups; permissions are not assigned directly to users.
 `evidence/security-groups.png`
 - User “Member Of” tab showing group membership
 
+## IT Group Delagation to Worskstation
+Permissions were placed on the workstations OU, only the IT group are able to make, delete and mendate modifications of hardware/objects.
+
+![DEL](Workstations-Delagation.png) 
+
 ---
 
 ## Design Decisions (Brief)
