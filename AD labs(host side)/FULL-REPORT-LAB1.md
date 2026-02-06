@@ -19,7 +19,7 @@ This lab demonstrates the **deployment and validation of a functional Active Dir
 - DNS hosted on the Domain Controller
 - Single-DC lab scope
 
-![dom](ShaneAD-IP-Dns.png)
+![dom](ShaneAd-IP-Dns.png)
 - Domain visible in Active Directory Users and Computers
 
 
