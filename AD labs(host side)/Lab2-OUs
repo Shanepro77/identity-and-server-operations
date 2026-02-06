@@ -16,18 +16,18 @@ This lab demonstrates **practical identity organisation and authorisation design
 ## OU Structure
 OUs are organised by **location and function**, with clear separation between identity, machines, and servers.
 
-📸 **Evidence**
+![OU](OU-structure.png)
 - OU hierarchy showing locations, Users, Workstations, Groups, and centralised Servers
-`evidence/ou-structure.png`
+
 
 ---
 
 ## User Accounts
 User accounts are created within their respective **location-based Users OUs**.
 
-📸 **Evidence**
+![OUuser](OU-users.png)
 - Sample users visible inside a location Users OU
-`evidence/users-in-ou.png`
+
 
 ---
 
@@ -35,7 +35,7 @@ User accounts are created within their respective **location-based Users OUs**.
 Security groups are used to control access and administration.
 Users are assigned to groups; permissions are not assigned directly to users.
 
-📸 **Evidence**
+![group](OU-groups.png)
 - Security groups visible in Groups OU
 `evidence/security-groups.png`
 - User “Member Of” tab showing group membership
